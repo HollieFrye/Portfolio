@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Test{
+    /*This program will be using a while loop and if then statements to see which movie rating they are allowed to see based on their age. 
+     * If they are over 17 years old, they can see rated R. 
+     * If they are over 12, they can see PG-13. If they are younger than 12, they can see PG.*/
+    public static void main(String[]args){
+    int count = 0;
+        while(count<1){                                 //while loop created to see if the user wants to enter another age
+            Scanner input = new Scanner(System.in);     //creating a variable called input that stores the user input with the Scanner class
+            System.out.println("How old are you? ");    
+            int age = input.nextInt();                    //creating an integer that holds the value the user entered for their age
+            if(age>17){                                 //if statement to verify if the user can see a rated R movie
+                System.out.println("R");
+            }
+            else if(age>12){                            //if else statement to verify if the user can see a PG-13 movie
+                System.out.println("PG-13");
+            }
+            else{                                       //else statement to verify if the user can only see a PG movie
+                System.out.println("PG");
+            }
+            System.out.println("Would you like to enter another age? Y/N");
+            char answer = input.next().charAt(0);       //storing variable char using input from scanner class to see if the user has another age to enter
+            if(answer == 'Y' || answer == 'y'){         //if statement verifying to see if the user answers yes
+                System.out.println("OK");
+            }
+            else{                                       //else statement verifying to see if the user answers no
+                System.out.println("OK thank you");
+                count++;                                //adds one to the count, ending the program because the user has no more ages to enter
+            }
+        }
+    }
+}
